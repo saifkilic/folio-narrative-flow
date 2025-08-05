@@ -1,26 +1,27 @@
-import { HeroSection } from "@/components/sections/hero-section";
-import { AboutSection } from "@/components/sections/about-section";
-import { ProjectsSection } from "@/components/sections/projects-section";
-import { ContactSection } from "@/components/sections/contact-section";
-import { FooterSection } from "@/components/sections/footer-section";
+import { StoryHero } from "@/components/sections/story-hero";
+import { OriginStory } from "@/components/sections/origin-story";
+import { EvolutionChapter } from "@/components/sections/evolution-chapter";
+import { CurrentChapter } from "@/components/sections/current-chapter";
+import { FinalChapter } from "@/components/sections/final-chapter";
 import { FloatingNav } from "@/components/ui/floating-nav";
 
 const Index = () => {
   const navSections = [
-    { id: "hero", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "projects", label: "Projects" },
-    { id: "contact", label: "Contact" }
+    { id: "hero", label: "Prologue" },
+    { id: "origin", label: "Origin" },
+    { id: "evolution", label: "Growth" },
+    { id: "current", label: "Present" },
+    { id: "final", label: "Future" }
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <FloatingNav sections={navSections} />
-      <HeroSection />
-      <AboutSection />
-      <ProjectsSection />
-      <ContactSection />
-      <FooterSection />
+      <StoryHero />
+      <OriginStory />
+      <EvolutionChapter />
+      <CurrentChapter />
+      <FinalChapter />
     </div>
   );
 };
