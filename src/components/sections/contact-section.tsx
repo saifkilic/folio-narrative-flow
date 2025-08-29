@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { StoryScroll, Typewriter } from "@/components/ui/story-animations";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, MessageCircle, Coffee } from "lucide-react";
+import { Mail, Github, Linkedin } from "lucide-react";
 
 export const ContactSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,24 +15,30 @@ export const ContactSection = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 1.2]);
 
-  const nextSteps = [
+  const contactLinks = [
     {
-      icon: MessageCircle,
-      title: "Let's Talk",
-      description: "Discuss your next project or explore collaboration opportunities",
-      action: "Start Conversation"
+      icon: Github,
+      title: "GitHub",
+      description: "Explore my code repositories and open source contributions",
+      action: "View Profile",
+      href: "https://github.com/daniyal69n",
+      color: "hover:text-gray-900 dark:hover:text-white"
     },
     {
-      icon: Coffee,
-      title: "Virtual Coffee",
-      description: "Share ideas, talk tech, or just connect over a virtual coffee",
-      action: "Schedule Call"
+      icon: Linkedin,
+      title: "LinkedIn",
+      description: "Connect with me professionally and view my experience",
+      action: "Connect",
+      href: "https://linkedin.com/in/daniyal-ahmed-7616611b2",
+      color: "hover:text-blue-600"
     },
     {
       icon: Mail,
-      title: "Stay Connected",
-      description: "Get updates on my latest projects and insights",
-      action: "Subscribe"
+      title: "Email",
+      description: "Send me a message directly for project inquiries",
+      action: "Send Email",
+      href: "mailto:dmn7146@gmail.com",
+      color: "hover:text-red-500"
     }
   ];
 
@@ -109,17 +115,17 @@ export const ContactSection = () => {
             </StoryScroll>
           </motion.div>
 
-          {/* Next Steps */}
+          {/* Contact Links */}
           <StoryScroll>
             <div className="space-y-12">
               <h3 className="text-3xl md:text-4xl font-bold text-foreground">
-                Ready to Start Your Project?
+                Let's Connect
               </h3>
               
               <div className="grid md:grid-cols-3 gap-8">
-                {nextSteps.map((step, index) => (
+                {contactLinks.map((link, index) => (
                   <motion.div
-                    key={step.title}
+                    key={link.title}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -129,19 +135,26 @@ export const ContactSection = () => {
                     <Card className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 h-full">
                       <CardContent className="p-6 text-center space-y-4">
                         <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto">
-                          <step.icon className="w-8 h-8 text-primary" />
+                          <link.icon className={`w-8 h-8 text-primary transition-colors ${link.color}`} />
                         </div>
                         <h4 className="text-xl font-semibold text-foreground">
-                          {step.title}
+                          {link.title}
                         </h4>
                         <p className="text-muted-foreground leading-relaxed">
-                          {step.description}
+                          {link.description}
                         </p>
                         <Button 
+                          asChild
                           className="w-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 hover:border-primary/50 transition-smooth"
                           variant="outline"
                         >
-                          {step.action}
+                          <a 
+                            href={link.href}
+                            target={link.href.startsWith('mailto:') ? '_self' : '_blank'}
+                            rel={link.href.startsWith('mailto:') ? '' : 'noopener noreferrer'}
+                          >
+                            {link.action}
+                          </a>
                         </Button>
                       </CardContent>
                     </Card>

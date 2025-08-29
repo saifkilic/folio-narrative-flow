@@ -71,7 +71,7 @@ export const HeroSection = () => {
             <h1 className="text-6xl md:text-8xl font-bold">
               <span className="block text-foreground/40 mb-2">Hi, I'm</span>
               <span className="block bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-                <Typewriter text="Alex Johnson" delay={2000} speed={100} />
+                <Typewriter text="Danyal Ahmed" delay={2000} speed={100} />
               </span>
               <span className="block text-foreground/40 mt-2">
                 <Typewriter text="Web Developer" delay={3500} speed={80} />

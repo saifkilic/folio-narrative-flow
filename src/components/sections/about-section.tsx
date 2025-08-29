@@ -67,7 +67,7 @@ export const AboutSection = () => {
                     viewport={{ once: true }}
                     className="text-muted-foreground"
                   >
-                    <strong className="text-foreground">5+ years</strong> of experience building web applications. 
+                    <strong className="text-foreground">2+ years</strong> of experience building web applications. 
                     I specialize in React, Node.js, and modern JavaScript ecosystems, 
                     creating scalable solutions for businesses of all sizes.
                   </motion.p>

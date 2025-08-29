@@ -18,23 +18,17 @@ export const SkillsSection = () => {
       title: "Frontend Development",
       period: "Expert Level",
       description: "Creating responsive, interactive user interfaces with modern frameworks and best practices.",
-      tech: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
+      tech: ["React", "Javascript", "Next.js", "Tailwind CSS", "Framer Motion"],
       outcome: "Beautiful, performant UIs"
     },
     {
       title: "Backend Development", 
       period: "Advanced Level",
       description: "Building robust APIs, databases, and server-side applications with scalable architecture.",
-      tech: ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs"],
+      tech: ["Node.js", "Express",  "MongoDB", "REST APIs"],
       outcome: "Reliable server solutions"
     },
-    {
-      title: "DevOps & Tools",
-      period: "Proficient Level", 
-      description: "Streamlining development workflows with modern tooling and deployment strategies.",
-      tech: ["Docker", "AWS", "Git", "CI/CD", "Testing Frameworks"],
-      outcome: "Efficient development process"
-    }
+    
   ];
 
   return (
@@ -192,7 +186,6 @@ export const SkillsSection = () => {
                                 <div key={skill} className="space-y-2">
                                   <div className="flex justify-between text-sm">
                                     <span className="text-muted-foreground">{skill}</span>
-                                    <span className="text-primary">{85 + index * 5 + skillIndex * 3}%</span>
                                   </div>
                                   <motion.div
                                     className="h-1 bg-muted/30 rounded-full overflow-hidden"
