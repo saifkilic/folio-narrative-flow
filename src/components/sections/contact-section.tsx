@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, MessageCircle, Coffee } from "lucide-react";
 
-export const FinalChapter = () => {
+export const ContactSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -38,7 +38,7 @@ export const FinalChapter = () => {
 
   return (
     <section 
-      id="final" 
+      id="contact" 
       ref={containerRef}
       className="min-h-screen py-32 relative bg-gradient-section overflow-hidden"
     >
@@ -73,14 +73,14 @@ export const FinalChapter = () => {
           {/* Chapter Header */}
           <StoryScroll>
             <span className="inline-block px-4 py-2 border border-accent/30 rounded-full text-sm text-accent bg-accent/10 backdrop-blur-sm mb-8">
-              Chapter 5: What's Next?
+              Get In Touch
             </span>
             <motion.div style={{ scale }} className="mb-12">
               <h2 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="text-foreground/60">Every Story</span>
+                <span className="text-foreground/60">Let's Work</span>
                 <br />
                 <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                  Continues
+                  Together
                 </span>
               </h2>
             </motion.div>
@@ -90,21 +90,21 @@ export const FinalChapter = () => {
           <motion.div style={{ y }} className="space-y-8 mb-20">
             <StoryScroll>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                This is just the beginning. Every project completed opens new possibilities. 
-                Every problem solved reveals new challenges worth tackling.
+                Have a project in mind? I'd love to hear about it. Let's discuss how we can 
+                bring your ideas to life with clean, efficient code.
               </p>
             </StoryScroll>
             
             <StoryScroll>
               <div className="bg-card/50 border border-primary/20 rounded-2xl p-8 backdrop-blur-sm">
-                <blockquote className="text-2xl font-light text-foreground leading-relaxed">
-                  <Typewriter 
-                    text="The best developers aren't just coders—they're storytellers who use technology as their medium."
-                    delay={500}
-                    speed={50}
-                  />
-                </blockquote>
-                <cite className="block mt-4 text-muted-foreground">— My philosophy</cite>
+                  <blockquote className="text-2xl font-light text-foreground leading-relaxed">
+                    <Typewriter 
+                      text="Great software is built on collaboration, communication, and a shared vision for success."
+                      delay={500}
+                      speed={50}
+                    />
+                  </blockquote>
+                  <cite className="block mt-4 text-muted-foreground">— Ready to build something amazing together?</cite>
               </div>
             </StoryScroll>
           </motion.div>
@@ -113,7 +113,7 @@ export const FinalChapter = () => {
           <StoryScroll>
             <div className="space-y-12">
               <h3 className="text-3xl md:text-4xl font-bold text-foreground">
-                Ready to Write the Next Chapter Together?
+                Ready to Start Your Project?
               </h3>
               
               <div className="grid md:grid-cols-3 gap-8">

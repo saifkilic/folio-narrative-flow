@@ -4,7 +4,7 @@ import { StoryScroll } from "@/components/ui/story-animations";
 import { Card, CardContent } from "@/components/ui/card";
 import evolutionImage from "@/assets/code-evolution.jpg";
 
-export const EvolutionChapter = () => {
+export const SkillsSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -13,33 +13,33 @@ export const EvolutionChapter = () => {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
-  const projects = [
+  const skillCategories = [
     {
-      title: "The Learning Phase",
-      period: "2019-2020",
-      description: "Building calculators, todo apps, and simple games. Each project taught me something new about problem-solving.",
-      tech: ["HTML", "CSS", "JavaScript"],
-      outcome: "Foundation of web development"
+      title: "Frontend Development",
+      period: "Expert Level",
+      description: "Creating responsive, interactive user interfaces with modern frameworks and best practices.",
+      tech: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
+      outcome: "Beautiful, performant UIs"
     },
     {
-      title: "The Growth Phase", 
-      period: "2021-2022",
-      description: "Creating complex web applications, learning frameworks, and understanding the ecosystem.",
-      tech: ["React", "Node.js", "MongoDB"],
-      outcome: "Full-stack capabilities"
+      title: "Backend Development", 
+      period: "Advanced Level",
+      description: "Building robust APIs, databases, and server-side applications with scalable architecture.",
+      tech: ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs"],
+      outcome: "Reliable server solutions"
     },
     {
-      title: "The Mastery Phase",
-      period: "2023-2024", 
-      description: "Leading projects, mentoring others, and crafting scalable solutions for real-world problems.",
-      tech: ["TypeScript", "Next.js", "Cloud Architecture"],
-      outcome: "Technical leadership"
+      title: "DevOps & Tools",
+      period: "Proficient Level", 
+      description: "Streamlining development workflows with modern tooling and deployment strategies.",
+      tech: ["Docker", "AWS", "Git", "CI/CD", "Testing Frameworks"],
+      outcome: "Efficient development process"
     }
   ];
 
   return (
     <section 
-      id="evolution" 
+      id="skills" 
       ref={containerRef}
       className="min-h-screen py-32 relative overflow-hidden bg-gradient-section"
     >
@@ -64,25 +64,25 @@ export const EvolutionChapter = () => {
           {/* Chapter Header */}
           <StoryScroll className="text-center mb-20">
             <span className="inline-block px-4 py-2 border border-secondary/30 rounded-full text-sm text-secondary bg-secondary/10 backdrop-blur-sm mb-8">
-              Chapter 3: Evolution
+              My Skills
             </span>
             <h2 className="text-5xl md:text-7xl font-bold mb-8">
-              <span className="text-foreground/60">From Simple Scripts</span>
+              <span className="text-foreground/60">Technologies &</span>
               <br />
               <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
-                To Complex Systems
+                Expertise
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Growth isn't just about learning new technologies. It's about understanding 
-              how to solve increasingly complex problems with elegant, maintainable solutions.
+              I work with modern technologies to build efficient, scalable applications. 
+              Here's what I bring to every project.
             </p>
           </StoryScroll>
 
           {/* Evolution Timeline */}
           <div className="space-y-32">
-            {projects.map((project, index) => (
-              <StoryScroll key={project.title}>
+            {skillCategories.map((category, index) => (
+              <StoryScroll key={category.title}>
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -102,10 +102,10 @@ export const EvolutionChapter = () => {
                         viewport={{ once: true }}
                       >
                         <span className="text-sm text-primary font-semibold uppercase tracking-wider">
-                          {project.period}
+                          {category.period}
                         </span>
                         <h3 className="text-3xl md:text-4xl font-bold text-foreground">
-                          {project.title}
+                          {category.title}
                         </h3>
                       </motion.div>
                       
@@ -116,7 +116,7 @@ export const EvolutionChapter = () => {
                         viewport={{ once: true }}
                         className="text-lg text-muted-foreground leading-relaxed"
                       >
-                        {project.description}
+                        {category.description}
                       </motion.p>
                     </div>
 
@@ -129,10 +129,10 @@ export const EvolutionChapter = () => {
                       className="space-y-3"
                     >
                       <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider">
-                        Technologies Mastered
+                        Key Technologies
                       </h4>
                       <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech, techIndex) => (
+                        {category.tech.map((tech, techIndex) => (
                           <motion.span
                             key={tech}
                             initial={{ opacity: 0, scale: 0 }}
@@ -156,7 +156,7 @@ export const EvolutionChapter = () => {
                       className="pt-4 border-t border-primary/20"
                     >
                       <p className="text-accent font-semibold">
-                        ↳ {project.outcome}
+                        ↳ {category.outcome}
                       </p>
                     </motion.div>
                   </div>
@@ -173,12 +173,12 @@ export const EvolutionChapter = () => {
                     >
                       <Card className="bg-gradient-card border-primary/30 shadow-card overflow-hidden">
                         <CardContent className="p-8">
-                          {/* Project Visualization */}
-                          <div className="space-y-6">
-                            <div className="flex items-center justify-between">
-                              <div className="text-2xl font-bold text-foreground">
-                                Phase {index + 1}
-                              </div>
+                            {/* Skill Visualization */}
+                            <div className="space-y-6">
+                              <div className="flex items-center justify-between">
+                                <div className="text-2xl font-bold text-foreground">
+                                  {category.title.split(" ")[0]}
+                                </div>
                               <motion.div
                                 animate={{ rotate: 360 }}
                                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -188,18 +188,18 @@ export const EvolutionChapter = () => {
                             
                             {/* Progress Visualization */}
                             <div className="space-y-3">
-                              {["Problem Solving", "Code Quality", "System Design"].map((skill, skillIndex) => (
+                              {["Proficiency", "Experience", "Projects Built"].map((skill, skillIndex) => (
                                 <div key={skill} className="space-y-2">
                                   <div className="flex justify-between text-sm">
                                     <span className="text-muted-foreground">{skill}</span>
-                                    <span className="text-primary">{(index + 1) * 30 + skillIndex * 5}%</span>
+                                    <span className="text-primary">{85 + index * 5 + skillIndex * 3}%</span>
                                   </div>
                                   <motion.div
                                     className="h-1 bg-muted/30 rounded-full overflow-hidden"
                                   >
                                     <motion.div
                                       initial={{ width: 0 }}
-                                      whileInView={{ width: `${(index + 1) * 30 + skillIndex * 5}%` }}
+                                      whileInView={{ width: `${85 + index * 5 + skillIndex * 3}%` }}
                                       transition={{ duration: 1.5, delay: 0.5 + skillIndex * 0.2 }}
                                       viewport={{ once: true }}
                                       className="h-full bg-gradient-to-r from-primary to-accent"

@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { StoryScroll, Typewriter } from "@/components/ui/story-animations";
 import workspaceImage from "@/assets/story-workspace.jpg";
 
-export const OriginStory = () => {
+export const AboutSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -16,7 +16,7 @@ export const OriginStory = () => {
 
   return (
     <section 
-      id="origin" 
+      id="about" 
       ref={containerRef}
       className="min-h-screen py-32 relative overflow-hidden"
     >
@@ -42,13 +42,13 @@ export const OriginStory = () => {
           {/* Chapter Header */}
           <StoryScroll className="text-center mb-20">
             <span className="inline-block px-4 py-2 border border-accent/30 rounded-full text-sm text-accent bg-accent/10 backdrop-blur-sm mb-8">
-              Chapter 2: The Origin
+              About Me
             </span>
             <h2 className="text-5xl md:text-7xl font-bold mb-8">
-              <span className="text-foreground/60">It Started With</span>
+              <span className="text-foreground/60">Passionate About</span>
               <br />
               <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                Curiosity
+                Clean Code
               </span>
             </h2>
           </StoryScroll>
@@ -67,9 +67,9 @@ export const OriginStory = () => {
                     viewport={{ once: true }}
                     className="text-muted-foreground"
                   >
-                    <strong className="text-foreground">2019.</strong> A quiet evening. 
-                    My first encounter with a terminal window. The cursor blinked, 
-                    waiting for something profound.
+                    <strong className="text-foreground">5+ years</strong> of experience building web applications. 
+                    I specialize in React, Node.js, and modern JavaScript ecosystems, 
+                    creating scalable solutions for businesses of all sizes.
                   </motion.p>
                   
                   <motion.div
@@ -79,11 +79,12 @@ export const OriginStory = () => {
                     viewport={{ once: true }}
                     className="bg-card/50 border border-primary/20 rounded-lg p-6 font-mono text-sm backdrop-blur-sm"
                   >
-                    <div className="text-muted-foreground mb-2">~/first-steps</div>
-                    <div className="text-primary">$ echo "<Typewriter text="Hello, World!" delay={1000} speed={100} />"</div>
-                    <div className="text-accent mt-2">
-                      <Typewriter text="Hello, World!" delay={2500} speed={80} />
-                    </div>
+                    <div className="text-muted-foreground mb-2">~/about-me</div>
+                    <div className="text-primary">const developer = {"{"}</div>
+                    <div className="text-accent ml-4">name: "<Typewriter text="Alex Johnson" delay={1000} speed={100} />",</div>
+                    <div className="text-accent ml-4">role: "<Typewriter text="Full-Stack Developer" delay={2000} speed={80} />",</div>
+                    <div className="text-accent ml-4">passion: "<Typewriter text="Building amazing experiences" delay={3000} speed={60} />"</div>
+                    <div className="text-primary">{"}"}</div>
                   </motion.div>
 
                   <motion.p
@@ -93,8 +94,8 @@ export const OriginStory = () => {
                     viewport={{ once: true }}
                     className="text-muted-foreground"
                   >
-                    That moment changed everything. What started as curiosity became obsession. 
-                    <strong className="text-foreground"> Every bug was a puzzle. Every solution, a victory.</strong>
+                    When I'm not coding, you'll find me exploring new technologies, 
+                    <strong className="text-foreground"> contributing to open source projects, or mentoring aspiring developers.</strong>
                   </motion.p>
                 </div>
               </StoryScroll>

@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ExternalLink, Github } from "lucide-react";
 
-export const CurrentChapter = () => {
+export const ProjectsSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [selectedProject, setSelectedProject] = useState(0);
   
@@ -45,7 +45,7 @@ export const CurrentChapter = () => {
 
   return (
     <section 
-      id="current" 
+      id="projects" 
       ref={containerRef}
       className="min-h-screen py-32 relative bg-background"
     >
@@ -55,18 +55,18 @@ export const CurrentChapter = () => {
           {/* Chapter Header */}
           <StoryScroll className="text-center mb-20">
             <span className="inline-block px-4 py-2 border border-primary/30 rounded-full text-sm text-primary bg-primary/10 backdrop-blur-sm mb-8">
-              Chapter 4: Present Day
+              My Work
             </span>
             <h2 className="text-5xl md:text-7xl font-bold mb-8">
-              <span className="text-foreground/60">Currently</span>
+              <span className="text-foreground/60">Featured</span>
               <br />
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Crafting Impact
+                Projects
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Today, I focus on building solutions that don't just work—they make a difference. 
-              Here are the projects currently shaping my story.
+              Here are some of my recent projects that showcase my skills and expertise
+              in modern web development.
             </p>
           </StoryScroll>
 

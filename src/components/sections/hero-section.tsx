@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Typewriter } from "@/components/ui/story-animations";
 import heroImage from "@/assets/hero-bg.jpg";
 
-export const StoryHero = () => {
+export const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -57,7 +57,7 @@ export const StoryHero = () => {
             className="inline-block"
           >
             <span className="px-4 py-2 border border-primary/30 rounded-full text-sm text-primary bg-primary/10 backdrop-blur-sm">
-              Chapter 1: The Beginning
+              Full-Stack Developer
             </span>
           </motion.div>
 
@@ -69,12 +69,12 @@ export const StoryHero = () => {
             className="space-y-4"
           >
             <h1 className="text-6xl md:text-8xl font-bold">
-              <span className="block text-foreground/40 mb-2">Every</span>
+              <span className="block text-foreground/40 mb-2">Hi, I'm</span>
               <span className="block bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-                <Typewriter text="Developer" delay={2000} speed={100} />
+                <Typewriter text="Alex Johnson" delay={2000} speed={100} />
               </span>
               <span className="block text-foreground/40 mt-2">
-                <Typewriter text="Has a Story" delay={3500} speed={80} />
+                <Typewriter text="Web Developer" delay={3500} speed={80} />
               </span>
             </h1>
           </motion.div>
@@ -87,8 +87,8 @@ export const StoryHero = () => {
             className="max-w-2xl mx-auto"
           >
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Mine began with a single line of code and evolved into a passion for 
-              crafting digital experiences that connect, inspire, and transform.
+              I create beautiful, functional web applications that solve real problems. 
+              From concept to deployment, I bring ideas to life with modern technologies.
             </p>
           </motion.div>
 
@@ -101,10 +101,10 @@ export const StoryHero = () => {
           >
             <Button
               size="lg"
-              onClick={() => scrollToChapter("origin")}
+              onClick={() => scrollToChapter("about")}
               className="bg-gradient-hero hover:shadow-glow transition-all duration-500 px-8 py-4 text-lg group"
             >
-              <span className="mr-2">Begin the Journey</span>
+              <span className="mr-2">View My Work</span>
               <motion.span
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -152,7 +152,7 @@ export const StoryHero = () => {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <div className="flex flex-col items-center text-muted-foreground">
-          <span className="text-sm mb-2">Scroll to continue the story</span>
+          <span className="text-sm mb-2">Scroll to learn more</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
